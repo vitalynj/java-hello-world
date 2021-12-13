@@ -1,4 +1,5 @@
 package com.mycompany.app;
+package junit.framework;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
