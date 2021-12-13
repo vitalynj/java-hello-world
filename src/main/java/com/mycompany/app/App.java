@@ -1,4 +1,5 @@
 package com.mycompany.app;
+package junit.framework;
 
 public class App 
 {
