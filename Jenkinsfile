@@ -5,7 +5,7 @@ pipeline {
         jdk 'jdk8'
           }
     stages {
-        stage('Clone code from GitHub') {
+        stage('GitHub clone stage') {
             steps {
                 echo "******************** Copying code from GitHub started ********************"
                 git branch: 'main',
@@ -14,13 +14,13 @@ pipeline {
                 echo "******************** Copying code from GitHub ********************"
             }
         }
-        stage('Build the code') {
+        stage('Build code stage') {
             steps {
                 echo "******************** Building the code ********************"
                 sh 'mvn package -DskipTests=false'
             }
         }
-        stage('Scan the code via Sonar') {
+        stage('Sonar scan stage') {
             tools{
                 jdk 'jdk11'
             }
