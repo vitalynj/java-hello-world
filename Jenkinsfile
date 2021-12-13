@@ -1,4 +1,4 @@
-pipeline {
+mpipeline {
     agent any
     tools {
         maven 'maven'
@@ -7,15 +7,16 @@ pipeline {
     stages {
         stage('Clone code from GitHub') {
             steps {
-                echo "--------------- Clone code from GitHub ---------------"
-                git branch: 'master',
-                url: 'https://github.com/neprosnulsea/maven-hello-world.git'
-                checkout scm  
+                echo "******************** Copying code from GitHub started ********************"
+                git branch: 'main',
+                url: 'https://github.com/vitalynj/java-hello-world.git'
+                checkout scm
+                echo "******************** Copying code from GitHub ********************"
             }
         }
         stage('Build the code') {
             steps {
-                echo "--------------- Build the code ---------------"
+                echo "******************** Building the code ********************"
                 sh 'mvn package -DskipTests=false'
             }
         }
@@ -26,7 +27,7 @@ pipeline {
         steps {
             withSonarQubeEnv(installationName: 'SonarQube') {
             sh '''
-                echo "--------------- Scan the code via Sonar ---------------"
+                echo "******************** Sonar scan ********************"
                 mvn sonar:sonar \
                 -Dsonar.projectKey=Jenkins \
                 -Dsonar.host.url=http://192.168.0.20:9000 \
