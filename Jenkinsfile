@@ -28,9 +28,9 @@ pipeline {
             sh '''
                 echo "--------------- Scan the code via Sonar ---------------"
                 mvn sonar:sonar \
-                -Dsonar.projectKey=maven-hello-world \
-                -Dsonar.host.url=http://172.23.160.41:9000 \
-                -Dsonar.login=540ad239c770ad427d4a50196dbd4bf8a2421fed \
+                -Dsonar.projectKey=Jenkins \
+                -Dsonar.host.url=http://192.168.0.20:9000 \
+                -Dsonar.login=11a83365b2b4e9e40e1e520154452a2a638af23f
                 -Dsonar.sources=. \
                 -Dsonar.java.binaries=. \
                 -Dsonar.projectVersion=$BUILD_NUMBER
