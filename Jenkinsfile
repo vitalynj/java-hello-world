@@ -32,8 +32,6 @@ pipeline {
                 -Dsonar.projectKey=Jenkins \
                 -Dsonar.host.url=http://172.17.0.3:9000 \
                 -Dsonar.login=11a83365b2b4e9e40e1e520154452a2a638af23f
-                -Dsonar.sources=. \
-                -Dsonar.java.binaries=. \
                 -Dsonar.projectVersion=$BUILD_NUMBER
             
             '''  
